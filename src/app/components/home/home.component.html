@@ -1,0 +1,17 @@
+<app-header></app-header>
+
+<h2>
+    Currency Exchanger
+</h2>
+
+<app-exchanger-currency (onMostPopularChanged)="onMostPopularChanged($event)" [mostPopular]="mostPopular"></app-exchanger-currency>
+
+<div class="panel">
+    <div class="row">
+        <div *ngFor="let curr of convertedAmout; let i = index; trackBy:trackByIndex" class="col-md-4 col-sm-6">
+            <div class="panel">
+                {{curr.value}} {{curr.curr}} 
+            </div>
+        </div>
+    </div>
+</div>

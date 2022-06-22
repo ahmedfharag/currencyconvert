@@ -1,0 +1,24 @@
+<app-header [detailPage]="true"></app-header>
+
+<h2>
+   <span> {{currency}} {{symbols && symbols[currency] ? '-' + symbols[currency] : ''}}</span>
+   <a routerLink="/">
+        Back to home
+   </a>
+</h2>
+
+<app-exchanger-currency (mainCurr)="mainCurr($event)" (sentSymbols)="sentSymbols($event)" [details]="true"></app-exchanger-currency>
+
+<div class="panel">
+    <div style="display: block;">
+        <canvas baseChart 
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+      >
+        </canvas>
+      </div>
+      
+</div>

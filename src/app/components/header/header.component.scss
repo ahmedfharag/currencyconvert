@@ -1,0 +1,31 @@
+header {
+    background-color: #2a2a2a;
+    border: 1px solid #fff;
+    padding: 10px;
+    .row {
+        display: flex;
+        align-items: center;
+        a {
+            text-decoration: none;
+        }
+        .col {
+            &:last-child {
+                justify-content: flex-end;
+                display: flex;
+            }
+            a {
+                padding: 10px;
+                border: 1px solid #fff;
+                font-size: 13px;
+                color: #fff;
+                cursor: pointer;
+                margin-left: 20px;
+                &:hover {
+                    color: #fff;
+                    background-color: #3b3939;
+                }
+            }
+        }
+    }
+
+}

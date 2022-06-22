@@ -1,0 +1,68 @@
+<div class="panel">
+   <div class="row mb-20">
+        <div class="col-3">
+            <div class="form-group">
+                <label>
+                    Amount
+                </label>
+                <input type="number" min="0" [(ngModel)]="amount" class="form-control"  />
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="right_panel d-flex align-item-center">
+                <div class="form-group w-100">
+                    <label>
+                        From
+                    </label>
+                    <select (change)="OnChange($event)" [(ngModel)]="from" [disabled]="amount == 0" class="form-control">
+                        <option [ngValue]="opt" *ngFor="let opt of allCurrencies">
+                            {{opt}}
+                        </option>
+                    </select>
+                </div>
+                <div class="long-arrow-right"></div>
+                <div class="long-arrow-left"></div>
+
+                <div class="form-group w-100">
+                    <label>
+                        To
+                    </label>
+                    <select (change)="OnChange($event)" [(ngModel)]="to" [disabled]="amount == 0" class="form-control">
+                        <option [ngValue]="opt" *ngFor="let opt of allCurrencies">
+                            {{opt}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="right_panel mt-20 d-flex align-item-center">
+                <button (click)="convertCurrency()">
+                    Convert
+                </button>
+            </div>
+        </div>
+   </div>
+   
+   <div class="row align-item-center mb-20">
+    <div class="col-3">
+        <div class="form-group">
+            <div class="panel  text-center">
+                {{oneCurrency | number : '0.2-5' }} {{info.from}} -  {{rate | number : '0.2-5'}} {{info.to}}
+            </div>
+        </div>
+    </div>
+    <div class="col-9">
+        <div [class.m-0]="details" class="row align-item-center right_panel">
+            <div class="panel text-center d-flex justify-content-center align-item-center main_box col">
+                {{result | number : '0.2-5'}} {{info.to}}
+            </div>
+            <div *ngIf="!details" class="col ">
+                <a  [routerLink]="['/details']"
+                    [queryParams]="{ to: to, from: from, amount: amount}">
+                    More details
+                </a>
+            </div>
+        </div>
+       
+    </div>
+</div>
+</div>

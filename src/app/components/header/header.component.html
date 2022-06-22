@@ -1,0 +1,19 @@
+<header>
+    <div class="row">
+        <div class="col">
+            <img src="/assets/imgs/logo.png" />
+        </div>
+        <div *ngIf="!detailPage" class="col">
+            <a  [routerLink]="['/details']"
+                [queryParams]="{ to: 'EUR', from: 'USD'}">
+                EUR-USD Details
+            </a>
+
+            <a  [routerLink]="['/details']"
+                [queryParams]="{ to: 'EUR', from: 'GBP'}">
+                EUR-GBP Details
+            </a>
+          
+        </div>
+    </div>
+</header>
