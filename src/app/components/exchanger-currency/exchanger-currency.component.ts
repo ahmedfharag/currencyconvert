@@ -66,10 +66,10 @@ export class ExchangerCurrencyComponent implements OnInit {
 
     
     }
-
+    
     justifyHeader() {
       const myHeaders = new Headers();
-      myHeaders.append("apikey", "2Rd7W3V7MhvUpbJHW1CNgBHo4SP3kUnr");
+      myHeaders.append("apikey", "uxxLpSknszpFkKg5wN9u5nIPyix0xvvY");
       const requestOptions: any = {
           method: 'GET',
           redirect: 'follow',
